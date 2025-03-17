@@ -1,0 +1,84 @@
+- The idea is to not download postgresql or pgAdmin but use Docker containers to run them.
+- Since we want the pgAdmin and pgDatabse to communicate with each other, they will be running inside a single container.
+- Ingest the sakila data to the pgDatabse using a python script
+- Then perform the SQL stuff.
+
+1. Make a 
+
+
+
+What is pgSQL,pgDatabse and pgAdmin?
+
+Good question! Let’s go through the definitions clearly:
+
+---
+
+### 🐘 **PostgreSQL**  
+➡️ **PostgreSQL** (or **Postgres**) is an **open-source relational database management system (RDBMS)**.  
+It allows you to store and manage structured data using **SQL** (Structured Query Language).  
+
+**Key Features:**  
+✅ Handles complex queries and large datasets efficiently  
+✅ Supports ACID (Atomicity, Consistency, Isolation, Durability) transactions → Ensures data integrity  
+✅ Supports advanced features like:  
+   - Window functions  
+   - JSON data  
+   - Full-text search  
+   - Recursive queries  
+✅ Extensible → You can create custom functions in Python, C, etc.  
+
+🔎 **Think of PostgreSQL** as the **engine** that stores and processes data.  
+
+---
+
+### 🗄️ **pgDatabase**  
+➡️ A **pgDatabase** is a specific database instance created within a PostgreSQL server.  
+When you install PostgreSQL, you can create multiple **databases** inside the server — each one can have its own tables, views, and indexes.  
+
+**Example:**  
+- You install PostgreSQL → This creates a PostgreSQL server  
+- You create a database called `sakila_db` → This is a `pgDatabase`  
+- Inside `sakila_db`, you create tables like `customers`, `orders`, `refunds` → All stored within the pgDatabase  
+
+🔎 **Think of pgDatabase** as a specific "project folder" inside the PostgreSQL engine.
+
+---
+
+### 🌐 **pgAdmin**  
+➡️ **pgAdmin** is a **graphical user interface (GUI)** tool for managing PostgreSQL databases.  
+It lets you interact with PostgreSQL visually instead of using the command line.  
+
+**What you can do with pgAdmin:**  
+✅ Create, modify, and delete databases and tables  
+✅ Write and run SQL queries directly  
+✅ Manage user roles and permissions  
+✅ Monitor server health and performance  
+
+🔎 **Think of pgAdmin** as a **control panel** for your PostgreSQL database.  
+
+---
+
+### 🏆 **How They Work Together:**
+1. **PostgreSQL** → The core engine handling storage and computation  
+2. **pgDatabase** → A structured container within PostgreSQL to store and organize data  
+3. **pgAdmin** → A convenient tool to visually explore and manage PostgreSQL databases  
+
+---
+
+### ✅ **Example:**  
+1. You create a `sakila_db` in PostgreSQL → pgDatabase  
+2. You load movie rental data into the database  
+3. You use `pgAdmin` to:  
+   - Write SQL queries to analyze rental trends  
+   - Create a view for top 10 most rented movies  
+   - Export the result for further Python analysis  
+
+---
+
+👉 PostgreSQL = **Brain** 🧠  
+👉 pgDatabase = **Storage** 🏢  
+👉 pgAdmin = **User Interface** 💻  
+
+---
+
+This combo is the foundation of most industry-level data pipelines! 🚀

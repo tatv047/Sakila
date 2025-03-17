@@ -1,0 +1,47 @@
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+*.pid
+.DS_Store
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Conda/venv environments
+.venv/
+env/
+*.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.parquet
+*.db
+*.sqlite
+
+# Large files and datasets
+data_pgadmin/
+sakila_postgres_data/
+
+# VSCode settings
+.vscode/
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Pytest and testing artifacts
+.coverage
+*.pyc
+pytest_cache/
+htmlcov/
+
+# Environment config (in case you have secrets)
+.env
